@@ -8,8 +8,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;700&family=Lato:wght@100;300;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
     <title>PlatziMovie</title>
 </head>
 <body>
+    <header class="header">
+        <nav class="header-nav">
+            <ul>
+                <li class="header-nav__icon">
+                    <img src="./assets/icon/film.png" alt="">
+                </li>
+                <li class="header-nav__home">
+                    <a href="#">Home</a>
+                </li>
+                <li class="header-nav__movies">
+                    <a href="#">Movies</a>
+                </li>
+                <li class="header-nav__trending">
+                    <a href="#">Trending</a>
+                </li>
+                <li class="header-nav__my-list">
+                    <a href="#">My List</a>
+                </li>
+            </ul>
+        </nav>
+
+        <form action="" class="header-form">
+            <input type="text" placeholder="Search">
+            <button class="header-form__search">
+                <img src="./assets/icon/search.svg" alt="Search">
+            </button>
+        </form>
+    </header>
 </body>
 </html>
