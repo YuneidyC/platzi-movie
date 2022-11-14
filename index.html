@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/icon/film.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;700&family=Lato:wght@100;300;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
-    <title>PlatziMovie</title>
-</head>
-<body>
-    <header class="header">
-        <nav class="header-nav">
-            <ul>
-                <li class="header-nav__icon">
-                    <img src="./assets/icon/film.png" alt="">
-                </li>
-                <li class="header-nav__home">
-                    <a href="#">Home</a>
-                </li>
-                <li class="header-nav__movies">
-                    <a href="#">Movies</a>
-                </li>
-                <li class="header-nav__trending">
-                    <a href="#">Trending</a>
-                </li>
-                <li class="header-nav__my-list">
-                    <a href="#">My List</a>
-                </li>
-            </ul>
-        </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="./assets/icon/film.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;700&family=Lato:wght@100;300;700&family=Roboto:wght@300;400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./styles.css" />
+        <title>PlatziMovie</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-container">
+                <img class="menu" src="./assets/icon/menu.png" alt="">
+                <nav class="header-nav">
+                    <img src="./assets/icon/film.png" alt="" />
+                    <ul class="header-nav__list">
+                        <li class="header-nav__home">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="header-nav__movies">
+                            <a href="#">Movies</a>
+                        </li>
+                        <li class="header-nav__trending">
+                            <a href="#">Trending</a>
+                        </li>
+                        <li class="header-nav__favorites">
+                            <a href="#">Favorites</a>
+                        </li>
+                        <li class="header-nav__categories">
+                            <a href="#">Categories
+                                <img src="./assets/icon/downArrow.png" alt="down arrow">
+                            </a>
+                            <div class="header-nav__categories-container">
+                                <ul class="header-nav__categories-container__list-left">
+                                    <li>Action</li>
+                                    <li>Adventure</li>
+                                    <li>Anime</li>
+                                    <li>Comedy</li>
+                                    <li>Crime</li>
+                                    <li>Drama</li>
+                                    <li>Documentary</li>
+                                </ul>
+                                <ul class="header-nav__categories-container__list-right">
+                                    <li>Horror</li>
+                                    <li>Kids and family</li>
+                                    <li>Romance</li>
+                                    <li>Science fiction</li>
+                                    <li>Sports</li>
+                                    <li>Suspense</li>
+                                    <li>More...</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
 
         <form action="" class="header-form">
             <input type="text" placeholder="Search">
