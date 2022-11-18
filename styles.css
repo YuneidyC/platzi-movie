@@ -312,11 +312,35 @@ header .movie-description {
     z-index: 2;
 }
 
-.movies-category {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 350px;
+.movies-wrapper {
     width: 100%;
+    max-width: auto;
+    position: relative;
+}
+
+.movies-carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.movies-carousel::-webkit-scrollbar {
+    height: 0;
+}
+
+.movies-category {
+    grid-row: 2 / 3;
+    display: flex;
+    position: relative;
+    height: 300px;
+}
+
+.movies-list {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 16px;
+    margin: auto;
+    box-sizing: border-box;
     margin-left: 38px;
 }
 
@@ -332,35 +356,81 @@ header .movie-description {
     grid-row: 3 / 4;
 }
 
+.movies-trending-container,
+.movies-popular-container,
+.movies-recommended-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 320px;
+}
+
 .movies-trending-title,
 .movies-popular-title ,
 .movies-recommended-title,
 .movies-favorites-title {
-    height: 50px;
+    grid-row: 1 / 2;
+    margin-left: 38px;
 }
 
-.movies-category p {
+.movies-trending-container p,
+.movies-popular-container p,
+.movies-recommended-container p {
     width: 100%;
     font-size: 1.6rem;
     color: white;
     font-weight: 500;
-    padding: 10px 0;
+    padding-top: 10px;
 }
 
 .movies-trending-list,
 .movies-popular-list,
 .movies-recommended-list,
 .movies-favorites-list {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
     display: flex;
     position: absolute;
     justify-content: center;
     align-self: flex-end;
 }
 
+.next,
+.prev {
+    background-color: transparent;
+    border: none;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    outline: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.movies-wrapper .next {
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.movies-wrapper .prev {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    display: none;
+}
+
+.button-next, .button-prev {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
 .movies-item {
-    display: inline-block;
     margin-right: 30px;
     text-align: left;
     overflow: hidden;

@@ -84,37 +84,57 @@
 
         <main>
             <section class="movies">
-                <div class="movies-category movies-trending-container">
+                <div class="movies-trending-container">
                     <div class="movies-trending-title">
                         <p>Trending</p>
                     </div>
-                    <div class="movies-trending-list"></div>
+                    <div class="movies-wrapper movies-trending-wrapper" id="wrapper-0">
+                        <div class="movies-carousel" id="movies-trending-carousel">
+                            <div class="movies-category">
+                                <div class="movies-list movies-trending-list"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="movies-category movies-popular-container">
+                <div class="movies-popular-container">
                     <div class="movies-popular-title">
                         <p>Popular</p>
                     </div>
-                    <div class="movies-popular-list"></div>
+                    <div class="movies-wrapper movies-popular-wrapper" id="wrapper-1">
+                        <div class="movies-carousel" id="movies-popular-carousel">
+                            <div class="movies-category">
+                                <div class="movies-list movies-popular-list"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="movies-category movies-recommended-container">
+                <div class="movies-recommended-container">
                     <div class="movies-recommended-title">
                         <p>Recommended</p>
                     </div>
-                    <div class="movies-recommended-list"></div>
+                    <div class="movies-wrapper movies-recommended-wrapper" id="wrapper-2">
+                        <div class="movies-carousel" id="movies-recommended-carousel">
+                            <div class="movies-category">
+                                <div class="movies-list movies-recommended-list"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="movies-category movies-favorites-container">
+                <!-- TODO: CREATE THIS LIST WHEN THE USER ADD A FAVORITE MOVIE
+                AN DELETE WHEN THE LENGTH IS ZERO-->
+                <!-- <div class="movies-category movies-favorites-container">
                     <div class="movies-favorites-title">
                         <p>Favorites</p>
                     </div>
-                    <div class="movies-favorites-list"></div>
-                </div>
+                    <div class="movies-list movies-favorites-list"></div>
+                </div> -->
             </section>
         </main>
         <!-- <script src="./src/secrets.js"></script> -->
-        <!-- <script src="./src/data.js"></script> -->
-        <!-- <script src="./src/index.js"></script> -->
+        <script src="./src/data.js"></script>
+        <script src="./src/index.js"></script>
     </body>
 </html>
