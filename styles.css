@@ -342,10 +342,12 @@ header .movie-description {
     margin: auto;
     box-sizing: border-box;
     margin-left: 38px;
+    overflow: hidden;
 }
 
 .movies-trending-container {
     grid-row: 1 / 2;
+    height: 350px;
 }
 
 .movies-popular-container {
@@ -389,7 +391,7 @@ header .movie-description {
     display: flex;
     position: absolute;
     justify-content: center;
-    align-self: flex-end;
+    align-items: flex-end;
 }
 
 .next,
@@ -453,17 +455,27 @@ header .movie-description {
     transition-duration: 0.3s;
 }
 
-.movies-trending-item .movie-img,
-.movies-popular-item .movie-img,
-.movies-recommended-item .movie-img,
-.movies-favorites-item .movie-img {
+.trending-img-container,
+.popular-img-container,
+.recommended-img-container {
     display: block;
     border-radius: 8px;
     height: 295px;
     width: 230px;
     min-width: 220px;
-    background-size: cover;
     cursor: pointer;
+}
+
+.movie-img {
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+    min-width: 220px;
+    text-align: left;
+    overflow: hidden;
+    opacity: 0.99;
+    position: relative;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .05);
 }
 
 .movie-details {
@@ -475,7 +487,15 @@ header .movie-description {
     z-index: 3;
 }
 
-.movie-title, .movie-year {
+.movie-media {
+    display: flex;
+    margin-top: 5px;
+}
+
+.movie-title,
+.movie-year,
+.movie-favorite,
+.movie-play {
     display: block;
     position: relative;
     top: 100px;
@@ -488,9 +508,30 @@ header .movie-description {
     transition-delay: 0s;
 }
 
+.movie-favorite {
+    background-image: url('./assets/icons/add.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.movie-play {
+    background-image: url('./assets/icons/play.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+
 .movie-year {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.631);
+}
+
+.movie-favorite, .movie-play {
+    width: 35px;
+    height: 35px;
 }
 
 .movies-item:focus:before,
@@ -513,7 +554,11 @@ header .movie-description {
 .movies-item:focus .movie-title,
 .movies-item:hover .movie-title,
 .movies-item:focus .movie-year,
-.movies-item:hover .movie-year {
+.movies-item:hover .movie-year,
+.movies-item:focus .movie-favorite,
+.movies-item:hover .movie-favorite,
+.movies-item:focus .movie-play,
+.movies-item:hover .movie-play {
     transition-delay: 0.15s;
 }
 
