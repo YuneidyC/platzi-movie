@@ -30,6 +30,20 @@ function getWatched(parent, className, className2, className3, items, images, pa
     setTextContextYear(yearMovie, movieItem, className3);
     movieDetail.appendChild(yearMovie);
 
+    // const mediaMovie = document.createElement('div');
+    // mediaMovie.classList.add('movie-media');
+    // movieDetail.appendChild(mediaMovie);
+
+    // const favoriteMovie = document.createElement('span');
+    // favoriteMovie.classList.add('movie-favorite');
+    // mediaMovie.appendChild(favoriteMovie);
+
+    // const playMovie = document.createElement('span');
+    // playMovie.classList.add('movie-play');
+    // mediaMovie.appendChild(playMovie);
+
+    addMediaImg(movieDetail);
+
     images.shift();
   });
 
@@ -194,4 +208,18 @@ function createImgButton(parent, className, src) {
   img.src = src;
   img.classList.add('button-carousel', className);
   parent.appendChild(img);
+}
+
+function addMediaImg(parent) {
+  const mediaMovie = document.createElement('div');
+    mediaMovie.classList.add('movie-media');
+    parent.appendChild(mediaMovie);
+
+    const favoriteMovie = document.createElement('span');
+    favoriteMovie.classList.add('movie-favorite');
+    mediaMovie.appendChild(favoriteMovie);
+
+    const playMovie = document.createElement('span');
+    playMovie.classList.add('movie-play');
+    mediaMovie.appendChild(playMovie);
 }
