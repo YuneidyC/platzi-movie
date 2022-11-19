@@ -1,34 +1,33 @@
-function getWatched(parent, className, className2, items, images, parentButton) {
+function getWatched(parent, className, className2, className3, items, images, parentButton) {
   const movieTrendingList = document.getElementsByClassName(parent)[0];
   const moviesButton = document.getElementsByClassName(parentButton)[0];
 
   items.forEach((movieItem, index) => {
-    const trending = document.createElement('a');
-    trending.href = '#';
-    trending.classList.add(className);
-    trending.classList.add(className2);
-    trending.id = className2 + '-' + index;
-    movieTrendingList.appendChild(trending);
+    const trendingImgContainer = document.createElement('div');
+    trendingImgContainer.classList.add(className);
+    trendingImgContainer.classList.add(className2);
+    movieTrendingList.appendChild(trendingImgContainer);
 
     const movieImg = document.createElement('img');
     movieImg.classList.add('movie-img');
-    setAttribute(movieImg, movieItem, className2);
+    movieImg.id = ('movie-img' + '-' + index);
+    setAttribute(movieImg, movieItem, className3);
 
     movieImg.setAttribute('src', images[0].url);
-    trending.appendChild(movieImg);
+    trendingImgContainer.appendChild(movieImg);
 
     const movieDetail = document.createElement('div');
     movieDetail.classList.add('movie-details');
-    trending.appendChild(movieDetail);
+    trendingImgContainer.appendChild(movieDetail);
 
     const titleMovie = document.createElement('span');
     titleMovie.classList.add('movie-title');
-    setTextContext(titleMovie, movieItem, className2);
+    setTextContext(titleMovie, movieItem, className3);
     movieDetail.appendChild(titleMovie);
 
     const yearMovie = document.createElement('span');
     yearMovie.classList.add('movie-year');
-    setTextContextYear(yearMovie, movieItem, className2);
+    setTextContextYear(yearMovie, movieItem, className3);
     movieDetail.appendChild(yearMovie);
 
     images.shift();
@@ -39,13 +38,13 @@ function getWatched(parent, className, className2, items, images, parentButton) 
   next.id = 'next' + i;
   next.classList.add('next');
   moviesButton.appendChild(next);
-  createImgButton(next, 'button-next', '../assets/icon/next.png');
+  createImgButton(next, 'button-next', '../assets/icons/next.png');
 
   const prev = document.createElement('button');
   prev.id = 'prev' + i;
   prev.classList.add('prev');
   moviesButton.appendChild(prev);
-  createImgButton(prev, 'button-prev', '../assets/icon/prev.png');
+  createImgButton(prev, 'button-prev', '../assets/icons/prev.png');
 }
 
 function createHero() {
@@ -91,9 +90,9 @@ function setTextContextYear(element, movieItem, classItem) {
 
 createHero();
 let i = -1;
-getWatched('movies-trending-list', 'movies-item', 'movies-trending-item', trendingMovies, movieTrendingImg, 'movies-trending-wrapper', i);
-getWatched('movies-popular-list', 'movies-item', 'movies-popular-item', popularMovies, moviePopularImg, 'movies-popular-wrapper', i);
-getWatched('movies-recommended-list', 'movies-item', 'movies-recommended-item', recommendedMovies, movieRecommendedImg, 'movies-recommended-wrapper', i);
+getWatched('movies-trending-list', 'trending-img-container', 'movies-item', 'movies-trending-item', trendingMovies, movieTrendingImg, 'movies-trending-wrapper', i);
+getWatched('movies-popular-list', 'popular-img-container', 'movies-item', 'movies-popular-item', popularMovies, moviePopularImg, 'movies-popular-wrapper', i);
+getWatched('movies-recommended-list', 'recommended-img-container', 'movies-item', 'movies-recommended-item', recommendedMovies, movieRecommendedImg, 'movies-recommended-wrapper', i);
 
 
 const gap = 16;
